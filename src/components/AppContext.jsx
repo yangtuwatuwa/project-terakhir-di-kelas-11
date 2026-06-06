@@ -45,7 +45,7 @@ function AppProvider({ children }) {
 
   // fungsi tambah postingan baru
   function tambahPost(teks) {
-    let postBaru = {
+    const postBaru = {
       id: Date.now(),
       userId: 1,
       teks: teks,
@@ -58,7 +58,7 @@ function AppProvider({ children }) {
 
   // fungsi like / unlike postingan
   function toggleLike(postId) {
-    let postBaru = posts.map(function (post) {
+    const postBaru = posts.map(function (post) {
       if (post.id === postId) {
         return {
           ...post,
@@ -73,9 +73,9 @@ function AppProvider({ children }) {
 
   // fungsi tambah komentar
   function tambahKomentar(postId, teks) {
-    let postBaru = posts.map(function (post) {
+    const postBaru = posts.map(function (post) {
       if (post.id === postId) {
-        let komentarBaru = {
+        const komentarBaru = {
           id: Date.now(),
           teks: teks
         }

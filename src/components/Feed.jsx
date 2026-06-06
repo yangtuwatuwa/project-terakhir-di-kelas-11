@@ -1,13 +1,10 @@
-
-
-
 import { useContext } from "react"
 import { AppContext } from "./AppContext"
 import CreatePost from "./CreatePost"
 import PostCard from "./PostCard"
 
 function Feed() {
-  let { posts } = useContext(AppContext)
+  const { posts } = useContext(AppContext)
 
   return (
     <div className="space-y-3">

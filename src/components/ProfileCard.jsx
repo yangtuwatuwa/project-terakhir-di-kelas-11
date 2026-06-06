@@ -2,8 +2,8 @@ import { useContext } from "react"
 import { AppContext } from "./AppContext"
 
 function ProfileCard() {
-  let { users, follows } = useContext(AppContext)
-  let currentUser = users[0]
+  const { users, follows } = useContext(AppContext)
+  const currentUser = users[0]
 
   if (!currentUser) {
     return (

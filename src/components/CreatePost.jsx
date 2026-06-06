@@ -2,10 +2,10 @@ import { useState, useRef, useContext } from "react"
 import { AppContext } from "./AppContext"
 
 function CreatePost() {
-  let [teks, setTeks] = useState("")
-  let inputRef = useRef(null)
-  let { tambahPost, users } = useContext(AppContext)
-  let currentUser = users[0]
+  const [teks, setTeks] = useState("")
+  const inputRef = useRef(null)
+  const { tambahPost, users } = useContext(AppContext)
+  const currentUser = users[0]
 
   function handleSubmit() {
     if (teks.trim() === "") return

@@ -2,10 +2,10 @@ import { useContext } from "react"
 import { AppContext } from "./AppContext"
 
 function SidebarRight() {
-  let { users, follows, toggleFollow } = useContext(AppContext)
+  const { users, follows, toggleFollow } = useContext(AppContext)
 
   // ambil user selain user pertama (user pertama = current user)
-  let suggestedUsers = users.slice(1, 6)
+  const suggestedUsers = users.slice(1, 6)
 
   return (
     <div className="space-y-3">
@@ -46,7 +46,7 @@ function SidebarRight() {
         <h3 className="text-[#3d2e2e] text-sm font-semibold mb-3">Tambah ke jaringan</h3>
         <div className="space-y-3">
           {suggestedUsers.map(function (user) {
-            let sudahFollow = follows.includes(user.id)
+            const sudahFollow = follows.includes(user.id)
             return (
               <div key={user.id} className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-[#c4a89a] flex-shrink-0 flex items-center justify-center">

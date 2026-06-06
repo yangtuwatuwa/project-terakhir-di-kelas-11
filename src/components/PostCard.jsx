@@ -2,13 +2,13 @@ import { useState, useRef, useContext } from "react"
 import { AppContext } from "./AppContext"
 
 function PostCard({ post }) {
-  let [showKomentar, setShowKomentar] = useState(false)
-  let [teksKomentar, setTeksKomentar] = useState("")
-  let komentarRef = useRef(null)
-  let { users, toggleLike, tambahKomentar } = useContext(AppContext)
+  const [showKomentar, setShowKomentar] = useState(false)
+  const [teksKomentar, setTeksKomentar] = useState("")
+  const komentarRef = useRef(null)
+  const { users, toggleLike, tambahKomentar } = useContext(AppContext)
 
   // cari user yang ngepost berdasarkan userId
-  let poster = users.find(function (u) {
+  const poster = users.find(function (u) {
     return u.id === post.userId
   })
 
