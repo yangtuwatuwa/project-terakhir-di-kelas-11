@@ -1,4 +1,5 @@
 import { useState, useRef, useContext } from "react"
+import { Link } from "react-router-dom"
 import { AppContext } from "./AppContext"
 
 function PostCard({ post }) {
@@ -26,17 +27,17 @@ function PostCard({ post }) {
   return (
     <div className="bg-[#F5EEE9] rounded-xl overflow-hidden">
       <div className="flex items-start gap-3 p-4 pb-2">
-        <div className="w-10 h-10 rounded-full bg-[#c4a89a] flex-shrink-0 flex items-center justify-center">
+        <Link to={poster ? "/profile/" + poster.id : "#"} className="w-10 h-10 rounded-full bg-[#c4a89a] flex-shrink-0 flex items-center justify-center no-underline">
           <span className="text-[#F5EEE9] text-sm font-bold">
             {poster ? poster.name.slice(0, 2).toUpperCase() : "??"}
           </span>
-        </div>
+        </Link>
         <div className="flex-1">
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="text-[#3d2e2e] text-sm font-semibold">
+              <Link to={poster ? "/profile/" + poster.id : "#"} className="text-[#3d2e2e] text-sm font-semibold no-underline hover:underline">
                 {poster ? poster.name : "Unknown"}
-              </h3>
+              </Link>
               <p className="text-[#A08080] text-[11px]">
                 {poster ? poster.company.name : ""}
               </p>

@@ -1,4 +1,5 @@
 import { useContext } from "react"
+import { Link } from "react-router-dom"
 import { AppContext } from "./AppContext"
 
 function ProfileCard() {
@@ -18,15 +19,17 @@ function ProfileCard() {
       <div className="h-16 bg-gradient-to-r from-[#A08080] to-[#c4a89a]"></div>
 
       <div className="flex justify-center -mt-8">
-        <div className="w-16 h-16 rounded-full bg-[#A08080] border-3 border-[#F5EEE9] flex items-center justify-center">
+        <Link to={"/profile/" + currentUser.id} className="w-16 h-16 rounded-full bg-[#A08080] border-3 border-[#F5EEE9] flex items-center justify-center no-underline">
           <span className="text-[#F5EEE9] text-xl font-bold">
             {currentUser.name.slice(0, 2).toUpperCase()}
           </span>
-        </div>
+        </Link>
       </div>
 
       <div className="text-center px-4 pt-2 pb-4">
-        <h2 className="font-semibold text-[#3d2e2e] text-sm">{currentUser.name}</h2>
+        <Link to={"/profile/" + currentUser.id} className="font-semibold text-[#3d2e2e] text-sm no-underline hover:underline">
+          {currentUser.name}
+        </Link>
         <p className="text-[#A08080] text-xs mt-0.5">{currentUser.company.catchPhrase}</p>
         <p className="text-[#b09a8a] text-[11px] mt-1">{currentUser.address.city}</p>
       </div>

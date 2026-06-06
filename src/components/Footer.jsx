@@ -41,7 +41,7 @@ function Footer() {
           </div>
         </div>
         <div className="border-t border-[#E0C8B8] pt-4 text-center">
-          <p className="text-[#b09a8a] text-[11px]">CERITA SI SOSMED © 2026. Semua hak dilindungi.</p>
+          <p className="text-[#b09a8a] text-[11px]">GET A JOBS BRO © 2026. Semua hak dilindungi.</p>
         </div>
       </div>
     </footer>

@@ -1,4 +1,5 @@
 import { useState, useRef, useContext } from "react"
+import { Link } from "react-router-dom"
 import { AppContext } from "./AppContext"
 
 function Header() {
@@ -23,7 +24,7 @@ function Header() {
   return (
     <div>
       <header className="flex bg-[#F5EEE9] h-12 items-center justify-evenly">
-        <h1 className="font-bold text-[#3d2e2e]">GET A JOB BRO</h1>
+        <Link to="/" className="font-bold text-[#3d2e2e] no-underline">GET A JOB BRO</Link>
 
         <div className="relative">
           <div className="flex items-center">
@@ -42,10 +43,11 @@ function Header() {
             <div className="absolute top-full left-0 mt-1 w-full bg-[#F5EEE9] rounded-xl shadow-lg border border-[#E0C8B8] z-50 overflow-hidden">
               {hasilCari.map(function (user) {
                 return (
-                  <div
+                  <Link
                     key={user.id}
-                    className="flex items-center gap-3 px-3 py-2.5 hover:bg-[#E0C8B8] cursor-pointer transition-colors"
-                    onClick={function () { setCari(user.name) }}
+                    to={"/profile/" + user.id}
+                    onClick={function () { setCari("") }}
+                    className="flex items-center gap-3 px-3 py-2.5 hover:bg-[#E0C8B8] cursor-pointer transition-colors no-underline"
                   >
                     <div className="w-8 h-8 rounded-full bg-[#A08080] flex-shrink-0 flex items-center justify-center">
                       <span className="text-[#F5EEE9] text-xs font-bold">
@@ -56,7 +58,7 @@ function Header() {
                       <p className="text-[#3d2e2e] text-xs font-semibold">{user.name}</p>
                       <p className="text-[#A08080] text-[11px]">{user.company.name}</p>
                     </div>
-                  </div>
+                  </Link>
                 )
               })}
             </div>
@@ -69,9 +71,9 @@ function Header() {
           )}
         </div>
 
-        <div className="bg-[#A08080] px-3 py-2 rounded-4xl text-[#F5EEE9] font-bold text-sm">
+        <Link to={currentUser ? "/profile/" + currentUser.id : "/"} className="bg-[#A08080] px-3 py-2 rounded-4xl text-[#F5EEE9] font-bold text-sm no-underline">
           {currentUser ? currentUser.name.slice(0, 2).toUpperCase() : ".."}
-        </div>
+        </Link>
       </header>
     </div>
   )
